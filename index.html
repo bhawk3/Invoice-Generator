@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Invoice Generator</title>
+<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="style.css" >
+
+<!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
+
+<body style="background-color:#313140;">
+<!-- Header Section -->
+    <div id="top-section-header" class="row" style="color:#ffffff;">
+        <h1 class="mt-5 d-flex justify-content-center">Invoice Generator </h1>
+        <p class="d-flex justify-content-center">Thanks for choosing The Best Biz, LLC!</p>
+    </div>
+
+<!-- The button portion of the app -->
+    <div class="d-flex justify-content-center" id="service-btns">
+        <button id="car-wash" type="button" class="btn btn-secondary m-3" onclick="carWash()">Car Wash: $10</button>
+        <button id="car-detail" type="button" class="btn btn-secondary m-3" onclick="carDetail()">Car Detail: $20</button>
+        <button id="car-shine" type="button" class="btn btn-secondary m-3" onclick="carShine()">Car Shine: $30</button>
+    </div>
+
+    <div class="row">
+        <div class="col-8 d-flex justify-content-center" >TASK</div>
+        <div class="col-4">TOTAL</div>
+    </div>
+<!-- Services Section -->
+    <div class="row ms-2 line-item-container">
+        <div class="col-6"style="justify-content: center;"><p class="line-item-service">Car Wash</p><button type="button" class="line-item-service-btn">Remove</button></div>
+        <div class="col-6" style="justify-content: center;" id="line-item-price">$ 10</div>
+    </div>
+
+<!-- Total Amount & Notes Section -->
+ <hr style="color:#fff; height:2px; width:60%; margin: auto;">
+
+ <div class="row mt-3" id="notes-section">
+    <div class="col-md-8 d-flex justify-content-center">NOTES<br>We accept Cash, Card, PayPal, Apple Pay</div>
+    <div class="col-md-4" id="total-amount-label">TOTAL AMOUNT <br><span id="total-amount"></span> </div>
+</div>
+
+<!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+    </script>
+    <script src="script.js" ></script>
+</body>
+</html>

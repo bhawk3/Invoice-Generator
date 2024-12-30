@@ -1,0 +1,55 @@
+#top-section-header {
+    background-color: #3230ab;
+}
+
+#car-wash, #car-detail, #car-shine {
+    color: #ffffff;
+    padding: 10px 15px 10px 15px;
+}
+
+.row {
+    color:#ffffff;
+}
+
+.line-item-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#line-item-price, .line-item-service {
+    font-size: 25px;
+}
+
+.line-item-service {
+    margin-top: 10px;
+}
+
+.col-6 {
+    display:flex;
+}
+
+.line-item-service-btn {
+    padding: 5px;
+    background:none;
+    border:none;
+    color:#fff;
+}
+
+
+@media screen and (max-width: 768px) {
+    #notes-section {
+        text-align: center;
+    }  
+    
+    #total-amount-label {
+        margin-top: 15px;
+    }
+}
+
+@media screen and (max-width: 499px) {
+    #service-btns {
+        flex-direction: column;
+    }
+}
+
