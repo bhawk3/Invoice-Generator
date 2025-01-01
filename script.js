@@ -1,40 +1,83 @@
 /* There may be an issue with class and id in 
 the html for the line items/buttons/prices */
+let serviceContainer = document.getElementById("service-container"); 
+const services = []
 
+const totalAmountString = document.getElementById("total-amount")
+let totalAmount = 0
 
 //Car Wash function
 function carWash() {
-    document.getElementById("service-container").innerHTML += `<div class="col-6"style="justify-content: center;"><p class="line-item-service">Car Wash</p><button type="button" class="line-item-service-btn" onclick="cwRemoveBtn()">Remove</button></div>
-        <div class="col-6" style="justify-content: center;" id="line-item-price">$ 10</div>`     
+   
+    const newCarWashServiceContent = document.createElement('div');
+    newCarWashServiceContent.className = "d-flex"
+    newCarWashServiceContent.innerHTML = `<div class="col-6"style="justify-content: center;"><p class="line-item-service">Car Wash</p><button type="button" class="line-item-service-btn" onclick="cwRemoveBtn()">Remove</button></div>
+        <div class="col-6" style="justify-content: center;" id="line-item-price">$ 10</div>`
+
+    serviceContainer.appendChild(newCarWashServiceContent)
+    services.push(newCarWashServiceContent)
+
+    let amount = totalAmount += 10
+    totalAmountString.innerHTML = amount
+    
 }
 //Car Detail function
 function carDetail() {
-    //innerHTML should work fine in this use case bc youre not getting user input
-    document.getElementById("service-container").innerHTML += `<div class="col-6"style="justify-content: center;"><p class="line-item-service">Car Detail</p><button type="button" class="line-item-service-btn" onclick="cdRemoveBtn()">Remove</button></div>
+    
+    const newCarDetailServiceContent = document.createElement('div');
+    newCarDetailServiceContent.className = "d-flex"
+    newCarDetailServiceContent.innerHTML = `<div class="col-6"style="justify-content: center;"><p class="line-item-service">Car Detail</p><button type="button" class="line-item-service-btn" onclick="cdRemoveBtn()">Remove</button></div>
         <div class="col-6" style="justify-content: center;" id="line-item-price">$ 20</div>`
-}
+
+    serviceContainer.appendChild(newCarDetailServiceContent)
+    services.push(newCarDetailServiceContent)
+   
+    let amount = totalAmount += 20
+    totalAmountString.innerHTML = amount
+   }
 
 //Car Shine function
 function carShine() {
-    document.getElementById("service-container").innerHTML += `<div class="col-6"style="justify-content: center;"><p class="line-item-service">Car Shine</p><button type="button" class="line-item-service-btn" onclick="csRemoveBtn()">Remove</button></div>
-        <div class="col-6" style="justify-content: center;" id="line-item-price">$ 30</div>`   
+
+    const newCarShineServiceContent = document.createElement('div')
+    newCarShineServiceContent.className = "d-flex"
+    newCarShineServiceContent.innerHTML = `<div class="col-6"style="justify-content: center;"><p class="line-item-service">Car Shine</p><button type="button" class="line-item-service-btn" onclick="csRemoveBtn()">Remove</button></div>
+        <div class="col-6" style="justify-content: center;" id="line-item-price">$ 30</div>`
+
+    serviceContainer.appendChild(newCarShineServiceContent)
+    services.push(newCarShineServiceContent)
+
+    let amount = totalAmount += 30
+    totalAmountString.innerHTML = amount
+
 }
 
 //Car Wash Remove Btn
 function cwRemoveBtn() {
-   let cwRemove = document.getElementById("service-container").innerHTML = ''
+   let cwRemove = services.pop()
 
-    cwRemove.remove()
+   if (cwRemove) {
+        serviceContainer.removeChild(cwRemove)
+        totalAmount - 10
+   }  
 }
 
 //Car Detail Remove Btn
 function cdRemoveBtn() {
-    document.getElementById("service-container").innerHTML = ''
+    let cdRemove = services.pop()
 
+    if (cdRemove) {
+        serviceContainer.removeChild(cdRemove)
+        totalAmount - 20
+    }
 }
 
 //Car Shine Remove Btn
 function csRemoveBtn() {
-    document.getElementById("service-container").innerHTML = ''
+    let csRemove = services.pop()
 
+    if (csRemove) {
+        serviceContainer.removeChild(csRemove)
+        totalAmount - 30
+    }
 }
