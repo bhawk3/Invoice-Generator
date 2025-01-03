@@ -9,11 +9,12 @@ let totalAmount = 0
 const carWashHTML = `<div class="col-6"style="justify-content: center;"><p class="line-item-service">Car Wash</p><button type="button" class="line-item-service-btn" onclick="cwRemoveBtn()">Remove</button></div>
         <div class="col-6" style="justify-content: center;" id="line-item-price">$ 10</div>`
 
+const newCarWashServiceContent = document.createElement('div');
+
 
 //Car Wash function
 function carWash() {
    
-    const newCarWashServiceContent = document.createElement('div');
     newCarWashServiceContent.className = "d-flex"
     newCarWashServiceContent.innerHTML = carWashHTML
     serviceContainer.appendChild(newCarWashServiceContent)
@@ -58,15 +59,19 @@ function carShine() {
 
 //Car Wash Remove Btn
 function cwRemoveBtn() {
-   let cwRemove = services.lastIndexOf(`<div class="col-6"style="justify-content: center;"><p class="line-item-service">Car Wash</p><button type="button" class="line-item-service-btn" onclick="cwRemoveBtn()">Remove</button></div>
-        <div class="col-6" style="justify-content: center;" id="line-item-price">$ 10</div>`)
-   cwRemoved = services.pop(cwRemove)
+    let cwRemove = serviceContainer.lastIndexOf(carWashHTML) //the html that needs to be removed here isnt in an array so lastIndexOf doesnt work
+    let cwRemoved = services.pop()
 
-   if (cwRemoved) {
-        serviceContainer.removeChild(cwRemoved)
-        
-        totalAmountString.innerHTML = totalAmount - 10
-   }  
+
+   for (let i = 0; i < services.length; i++) {
+        if (cwRemove && cwRemoved) {
+            serviceContainer.removeChild(cwRemove)
+            
+            totalAmountString.innerHTML = totalAmount - 10
+        } 
+   }
+
+    
 }
 
 //Car Detail Remove Btn
