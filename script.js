@@ -20,9 +20,9 @@ function carWash() {
     services.push(newCarWashServiceContent)
 
     let amount = totalAmount += 10
-    totalAmountString.innerHTML = amount
-    
+    totalAmountString.innerHTML = amount    
 }
+
 //Car Detail function
 function carDetail() {
     
@@ -54,7 +54,6 @@ function carShine() {
 
     let amount = totalAmount += 30
     totalAmountString.innerHTML = amount
-
 }
 
 //Car Wash Remove Btn
@@ -79,7 +78,6 @@ function cdRemoveBtn() {
        // totalAmount - 20
 
         totalAmountString.innerHTML = totalAmount - 20
-
     }
 }
 
@@ -91,6 +89,5 @@ function csRemoveBtn() {
         serviceContainer.removeChild(csRemove)
       //  totalAmount - 30
       totalAmountString.innerHTML = totalAmount - 30
-
     }
 }
